@@ -45,6 +45,9 @@ namespace Katas.ShoppingCart
                     case "C40":
                         total += 60;
                         break;
+                    case "T34":
+                        total += 99;
+                        break;
                 }
             }
 
