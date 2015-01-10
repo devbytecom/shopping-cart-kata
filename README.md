@@ -13,3 +13,5 @@ After coming across http://rubygem.me/2014/01/16/shopping-cart-kata/ I thought I
     }
     
 Just so I could test the item count and price.
+
+I could have gone all out and created proper structures for the items, but as this was just checking the item name and price, a simple dictionary/check would be more than enough, afterall I'm testing my TDD knowledge than coding abilities on this one.  There's a lot I'd do differently if I was writing this code for an actual shopping place such as ASDA, as no doubt their specs would be more complicated therefore requring more complex types to check...
