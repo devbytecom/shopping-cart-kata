@@ -19,32 +19,14 @@ namespace Katas.ShoppingCart.Tests
             Assert.That(_shoppingCart.TotalItems(), Is.EqualTo(1));
         }
 
-        [Test]
-        public void ensure_one_item_of_a99_costs_right()
+        [TestCase("A99", 50)]
+        [TestCase("B15", 30)]
+        [TestCase("C40", 60)]
+        [TestCase("T34", 99)]
+        public void ensure_one_of_each_item_costs_right(string item, decimal priceExpected)
         {
-            _shoppingCart.Scan("A99");
-            Assert.That(_shoppingCart.TotalPrice(), Is.EqualTo(50));
-        }
-
-        [Test]
-        public void ensure_one_item_of_b15_costs_right()
-        {
-            _shoppingCart.Scan("B15");
-            Assert.That(_shoppingCart.TotalPrice(), Is.EqualTo(30));
-        }
-
-        [Test]
-        public void ensure_one_item_of_c40_costs_right()
-        {
-            _shoppingCart.Scan("C40");
-            Assert.That(_shoppingCart.TotalPrice(), Is.EqualTo(60));
-        }
-
-        [Test]
-        public void ensure_one_item_of_t34_costs_right()
-        {
-            _shoppingCart.Scan("T34");
-            Assert.That(_shoppingCart.TotalPrice(), Is.EqualTo(99));
+            _shoppingCart.Scan(item);
+            Assert.That(_shoppingCart.TotalPrice(), Is.EqualTo(priceExpected));
         }
     }
 }
