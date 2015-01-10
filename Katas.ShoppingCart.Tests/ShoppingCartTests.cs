@@ -25,5 +25,12 @@ namespace Katas.ShoppingCart.Tests
             _shoppingCart.Scan("A99");
             Assert.That(_shoppingCart.TotalPrice(), Is.EqualTo(50));
         }
+
+        [Test]
+        public void ensure_one_item_of_b15_costs_right()
+        {
+            _shoppingCart.Scan("B15");
+            Assert.That(_shoppingCart.TotalPrice(), Is.EqualTo(30));
+        }
     }
 }
