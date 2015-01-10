@@ -21,7 +21,7 @@ namespace Katas.ShoppingCart
 
         public int TotalItems()
         {
-            return 1;
+            return _items.Count;
         }
 
         public decimal TotalPrice()
@@ -37,7 +37,7 @@ namespace Katas.ShoppingCart
                 switch (item.Key)
                 {
                     case "A99":
-                        total += 50;
+                        total += item.Value == 3 ? 130 : 50;
                         break;
                     case "B15":
                         total += 30;

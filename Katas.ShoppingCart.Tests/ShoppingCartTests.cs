@@ -26,7 +26,19 @@ namespace Katas.ShoppingCart.Tests
         public void ensure_one_of_each_item_costs_right(string item, decimal priceExpected)
         {
             _shoppingCart.Scan(item);
+
             Assert.That(_shoppingCart.TotalPrice(), Is.EqualTo(priceExpected));
+        }
+
+        [Test]
+        public void ensure_three_a99_costs_right()
+        {
+            _shoppingCart.Scan("A99");
+            _shoppingCart.Scan("A99");
+            _shoppingCart.Scan("A99");
+
+            Assert.That(_shoppingCart.TotalItems(), Is.EqualTo(3));
+            Assert.That(_shoppingCart.TotalPrice(), Is.EqualTo(130));
         }
     }
 }
