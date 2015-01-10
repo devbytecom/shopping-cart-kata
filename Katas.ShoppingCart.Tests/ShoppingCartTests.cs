@@ -63,15 +63,13 @@ namespace Katas.ShoppingCart.Tests
             Assert.That(_shoppingCart.TotalPrice(), Is.EqualTo(239));
         }
 
-        [Test]
-        public void ensure_four_items_of_b15_costs_right()
+        [TestCase("B15", 4, 90)]
+        [TestCase("B15", 5, 120)]
+        public void ensure_right_discounts_are_added_for_multiple_items_of_same_item(string item, int quantity,
+            decimal priceExpected)
         {
-            _shoppingCart.Scan("B15");
-            _shoppingCart.Scan("B15");
-            _shoppingCart.Scan("B15");
-            _shoppingCart.Scan("B15");
-
-            Assert.That(_shoppingCart.TotalPrice(), Is.EqualTo(90));
+            var itemCalculator = new ItemPriceCalculator();
+            Assert.That(itemCalculator.CalculatePrice(item, quantity), Is.EqualTo(priceExpected));
         }
     }
 }
