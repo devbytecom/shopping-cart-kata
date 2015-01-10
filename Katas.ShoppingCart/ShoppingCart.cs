@@ -9,9 +9,14 @@ namespace Katas.ShoppingCart
             
         }
 
-        public int Total()
+        public int TotalItems()
         {
             return 1;
+        }
+
+        public decimal TotalPrice()
+        {
+            return 50m;
         }
     }
 }

@@ -3,6 +3,7 @@
     public interface IShoppingCart
     {
         void Scan(string item);
-        int Total();
+        int TotalItems();
+        decimal TotalPrice();
     }
 }

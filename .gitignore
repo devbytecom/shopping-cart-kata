@@ -2,3 +2,5 @@
 /Katas.ShoppingCart/obj
 /Katas.ShoppingCart.Tests/bin
 /Katas.ShoppingCart.Tests/obj
+/*.user
+/*.suo
