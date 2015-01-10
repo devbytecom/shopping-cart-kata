@@ -26,13 +26,29 @@ namespace Katas.ShoppingCart
 
         public decimal TotalPrice()
         {
-            var _item = _items.First();
+            var itemsGrouped = _items
+                .GroupBy(x => x)
+                .ToDictionary(item => item.Key, itemCount => itemCount.Count());
 
-            if (_item == "B15")
+            var total = 0m;
+
+            foreach (var item in itemsGrouped)
             {
-                return 30m;
+                switch (item.Key)
+                {
+                    case "A99":
+                        total += 50;
+                        break;
+                    case "B15":
+                        total += 30;
+                        break;
+                    case "C40":
+                        total += 60;
+                        break;
+                }
             }
-            return 50m;
+
+            return total;
         }
     }
 }
