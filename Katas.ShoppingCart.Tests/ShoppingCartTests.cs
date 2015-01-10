@@ -40,7 +40,7 @@ namespace Katas.ShoppingCart.Tests
             Assert.That(_shoppingCart.TotalItems(), Is.EqualTo(3));
             Assert.That(_shoppingCart.TotalPrice(), Is.EqualTo(130));
         }
-        
+
         [Test]
         public void ensure_two_b15_costs_right()
         {
@@ -61,6 +61,17 @@ namespace Katas.ShoppingCart.Tests
 
             Assert.That(_shoppingCart.TotalItems(), Is.EqualTo(4));
             Assert.That(_shoppingCart.TotalPrice(), Is.EqualTo(239));
+        }
+
+        [Test]
+        public void ensure_four_items_of_b15_costs_right()
+        {
+            _shoppingCart.Scan("B15");
+            _shoppingCart.Scan("B15");
+            _shoppingCart.Scan("B15");
+            _shoppingCart.Scan("B15");
+
+            Assert.That(_shoppingCart.TotalPrice(), Is.EqualTo(90));
         }
     }
 }

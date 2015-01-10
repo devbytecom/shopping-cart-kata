@@ -9,9 +9,9 @@ namespace Katas.ShoppingCart
             switch (item)
             {
                 case "A99":
-                    return quantity == 3 ? 130 : 50;
+                    return quantity % 3 == 0 ? (quantity / 3 * 130) : 50;
                 case "B15":
-                    return quantity == 2 ? 45 : 30;
+                    return quantity % 2 == 0 ? (quantity / 2 * 45) : 30;
                 case "C40":
                     return 60;
                 case "T34":
