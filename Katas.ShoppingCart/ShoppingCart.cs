@@ -1,14 +1,22 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Katas.ShoppingCart
 {
     public class ShoppingCart : IShoppingCart
     {
-        private string _item;
+        private IList<string> _items;
+
+        public ShoppingCart()
+        {
+            _items = new List<string>();
+        }
 
         public void Scan(string item)
         {
-            _item = item;
+            _items.Add(item);
         }
 
         public int TotalItems()
@@ -18,6 +26,8 @@ namespace Katas.ShoppingCart
 
         public decimal TotalPrice()
         {
+            var _item = _items.First();
+
             if (_item == "B15")
             {
                 return 30m;
