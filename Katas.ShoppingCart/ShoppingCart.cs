@@ -40,7 +40,7 @@ namespace Katas.ShoppingCart
                         total += item.Value == 3 ? 130 : 50;
                         break;
                     case "B15":
-                        total += 30;
+                        total += item.Value == 2 ? 45 : 30;
                         break;
                     case "C40":
                         total += 60;
