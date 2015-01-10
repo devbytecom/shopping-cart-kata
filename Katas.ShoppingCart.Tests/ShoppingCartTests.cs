@@ -50,5 +50,17 @@ namespace Katas.ShoppingCart.Tests
             Assert.That(_shoppingCart.TotalItems(), Is.EqualTo(2));
             Assert.That(_shoppingCart.TotalPrice(), Is.EqualTo(45));
         }
+
+        [Test]
+        public void ensure_one_of_each_item_subtotals_right()
+        {
+            _shoppingCart.Scan("A99");
+            _shoppingCart.Scan("B15");
+            _shoppingCart.Scan("C40");
+            _shoppingCart.Scan("T34");
+
+            Assert.That(_shoppingCart.TotalItems(), Is.EqualTo(4));
+            Assert.That(_shoppingCart.TotalPrice(), Is.EqualTo(239));
+        }
     }
 }
