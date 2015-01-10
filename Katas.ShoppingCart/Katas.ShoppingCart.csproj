@@ -39,7 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IItemPriceCalculator.cs" />
     <Compile Include="IShoppingCart.cs" />
+    <Compile Include="ItemPriceCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShoppingCart.cs" />
   </ItemGroup>

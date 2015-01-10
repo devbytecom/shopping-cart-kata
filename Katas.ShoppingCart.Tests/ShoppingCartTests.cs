@@ -9,7 +9,7 @@ namespace Katas.ShoppingCart.Tests
         [SetUp]
         public void SetUpShoppingCart()
         {
-            _shoppingCart = new ShoppingCart();
+            _shoppingCart = new ShoppingCart(new ItemPriceCalculator());
         }
 
         [Test]
