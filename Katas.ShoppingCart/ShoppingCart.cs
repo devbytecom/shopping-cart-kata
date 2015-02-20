@@ -6,7 +6,7 @@ namespace Katas.ShoppingCart
     public class ShoppingCart : IShoppingCart
     {
         private readonly IItemPriceCalculator _itemPriceCalculator;
-        private IList<string> _items;
+        private readonly IList<string> _items;
 
         public ShoppingCart(IItemPriceCalculator itemPriceCalculator)
         {
